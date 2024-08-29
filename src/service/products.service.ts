@@ -11,4 +11,5 @@ export class ProductsService {
   saveProduct(product:any[]):Observable<any>{
     return this._http.post("https://my-first-project-d569b-default-rtdb.firebaseio.com/products.json" , product)
   }
+  
 }
