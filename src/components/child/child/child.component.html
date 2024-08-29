@@ -1,0 +1,16 @@
+<p>child works!</p>
+
+<p>{{name }}From Parent Component</p>
+
+<div *ngFor="let i of cName">
+    <p>Id:{{i.id}}</p>
+    <p>Name:{{i.name}}</p>
+</div>
+
+
+
+<button (click)="sendMessage()">Click</button>
+
+<button (click)="fromChild()">Click Here</button>
+
+

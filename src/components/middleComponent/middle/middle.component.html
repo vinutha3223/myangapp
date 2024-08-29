@@ -1,0 +1,33 @@
+<h3 style = "justify-content: center; color:darkmagenta;">Middle</h3>
+
+<h4 style="color:darkcyan" >String Interpolation</h4>
+<p>Book Id:{{bookId}}</p>
+<p>Book Name:{{bookName}}</p>
+<p>Author:{{author}}</p>
+<p>Book Status:{{bookStatus}}</p>
+<hr/>
+
+<h4 style="color:darkcyan">Property Binding</h4>
+<div>
+    <button class="btn btn-info" [disabled]="btnToggle">Toggle</button>
+</div>
+<small>Button will be disabled. So in run time we are enabling the button using property binding</small>
+<hr/>
+
+<h4 style="color:darkcyan">Event Binding</h4>
+<div>
+    <button (click)="onToggle()">Book Status</button>
+</div>
+<p>Book Status On Toggle:{{bookStatus}}</p>
+<hr/>
+
+<h4 style="color:darkcyan">Two-Way Binding</h4>
+<div>
+    <input type="text" class="form-control" [(ngModel)]="bookName"/>
+</div>
+<div>
+    Book Name Changed by Two-Way binding:{{bookName}}
+</div>
+
+
+

@@ -1,0 +1,8 @@
+<p>item-list works!</p>
+<div>
+    <ul>
+        <li *ngFor="let item of items">
+            <a [routerLink]="['/item',item.id]">{{item.name}}</a>
+        </li>
+    </ul>
+</div>

@@ -1,0 +1,30 @@
+<h3 style="color:darkmagenta;">Left</h3>
+<h4 style="color:darkcyan">String Interpolation</h4>
+<p>Employee Id:{{empId}}</p>
+<p>Employee Name:{{empName}}</p>
+<p>Deparment:{{dept}}</p>
+<p>Project Status:{{projectStatus}}</p>
+<hr/>
+
+<h4 style="color:darkcyan">Property Binding </h4>
+<div>
+    <button class="btn btn-outline-primary" [disabled]="switchBtn">Switch</button>
+</div>
+<small>Switch will be disabled. So in run time we are enabling the Switch using property binding</small>
+<hr/>
+
+<h4 style="color:darkcyan">Event Binding</h4>
+<div>
+    <button (click)="proStatus()">Project Status</button>
+</div>
+<p>    Project Status on Toggle:{{projectStatus}}
+</p>
+<hr/>
+
+<h4 style="color:darkcyan">Two-Way Binding</h4>
+<div>
+    <input type="text" class="form-control" [(ngModel)]="dept"/>
+</div>
+<div>
+    Department Name Changed by Two-Way binding:{{dept}}
+</div>

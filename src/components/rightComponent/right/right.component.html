@@ -1,0 +1,103 @@
+<h3 style="color:darkmagenta;">Right</h3>
+
+<h4 style="color:darkcyan">Structural Directives</h4>
+
+<h5>i.*ngIf:</h5>
+
+<div *ngIf="cars ; else noCarsAvilable">
+    >Cars Variable exist
+</div>
+
+<div *ngIf="cars1 ; else noCarsAvilable">
+      *Cars Variable exist
+</div>
+<ng-template #noCarsAvilable>
+    >No Cars Are present
+</ng-template>
+
+<div *ngIf="10%2==0 ; then evenValue; else oddValue ">
+</div>
+<ng-template #evenValue>
+      >10 is even number,so it is divisible by 2
+</ng-template>
+<ng-template #oddValue>
+      10 is not divisble by odd number
+</ng-template>
+
+<h5>ii.*ngFor:</h5>
+
+<div *ngIf ="cars ;then carsAvailable; else noCarsAvailable">
+    Cars Exist
+</div>
+
+<ng-template #carsAvailable>
+  <div *ngFor="let obj of cars;index as i;even as e ;odd as o; first as f;last as l">
+    <div>
+       {{i}}-{{obj.carName}}-Even:{{e}}-Odd:{{o}}-first:{{f}}-last:{{l}}
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #noCarsAvailable>
+No Cars to dispalay
+</ng-template>
+
+<h5>iii.*ngSwitchCase:</h5>
+
+<div *ngIf="courses; then availabeleCourses;else notAvailableCourses">
+</div>
+<ng-template #availabeleCourses >
+      <div *ngFor="let obj of courses">
+          <div [ngSwitch]="obj.courseStatus">
+            <div *ngSwitchCase="'Completed'">
+                Courses Completed:{{obj.courseName}}
+            </div>
+            <div *ngSwitchCase="'Not Completed'">
+                Courses Not Completed:{{obj.courseName}}
+            </div>
+            <div *ngSwitchDefault>
+                Courses Not started:{{obj.courseName}}
+            </div>
+          </div>
+      </div>
+
+
+      
+</ng-template>
+
+<ng-template #notAvailableCourses>
+ NO Courses present
+</ng-template>
+<hr/>
+
+
+<h4 style="color:darkcyan">Attribute Directives</h4>
+<h5>i.ngStyle:</h5>
+<p style="color:red ; font-size:large;">
+    Angular applications are styeled with standard CSS 
+</p>
+<p [ngStyle]="{'color':'orange','font-weight':'bold'}">
+    ngStyle ia an attribute directive that updates styels for the containing HTML element in your component
+</p>
+
+<h5>ii.ngClass:</h5>
+
+<div *ngIf="courses; then availabeleCourses;else notAvailableCourses">
+</div>
+<ng-template #availabeleCourses >
+<div *ngFor="let x of courses">
+    <div [ngClass]="{'ncmpStyle':x.courseStatus=='Not Completed','cmpStyle':x.courseStatus=='Completed'}">
+            {{x.courseName}}
+    </div>
+</div>
+</ng-template>
+<ng-template #notAvailableCourses>
+    NO Courses present
+</ng-template>
+
+
+
+
+
+
+
